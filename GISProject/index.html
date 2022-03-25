@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather</title>
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1" >
+        <style type='text/css'>
+            * {
+                box-sizing: border-box;
+            }
+
+            /* Create four equal columns that floats next to each other */
+            .column {
+                float: left;
+                width: 25%;
+                padding: 10px;
+                height: 400px; /* Should be removed. Only for demonstration */
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+                content: "";
+                display: table;
+                clear: both;
+            }
+            /* Set the size of the div element that contains the map */
+            #map {
+                height: 300px;
+                /* The height is 400 pixels */
+                width: 100%;
+                /* The width is the width of the web page */
+            }
+            #map2 {
+                height: 300px;
+                /* The height is 400 pixels */
+                width: 100%;
+                /* The width is the width of the web page */
+            }
+            #map3 {
+                height: 300px;
+                /* The height is 400 pixels */
+                width: 100%;
+                /* The width is the width of the web page */
+            }
+            #map4 {
+                height: 300px;
+                /* The height is 400 pixels */
+                width: 100%;
+                /* The width is the width of the web page */
+            }
+        </style>
+    <script>
+        // Initialize and add the  first map
+        function initMap() {
+            // The location of las vegas
+            const lasvegas = { lat: 36.169941, lng: -115.139832 };
+            // The map, centered at las vegas
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 8,
+                center: lasvegas,
+                mapTypeId: 'hybrid'
+            });
+            // The marker, positioned at las vegas
+            const marker = new google.maps.Marker({
+                position: lasvegas,
+                map: map,
+            });
+        }
+        // Initialize and add the  second map
+        function secondMap() {
+            // The location of los angeles
+            const losangeles = { lat: 34.052235, lng: -118.243683 };
+            // The map, centered at los angeles
+            const map = new google.maps.Map(document.getElementById("map2"), {
+                zoom: 8,
+                center: losangeles,
+                mapTypeId: 'hybrid'
+            });
+            // The marker, positioned at los angeles
+            const marker = new google.maps.Marker({
+                position: losangeles,
+                map: map,
+            });
+        }
+        // Initialize and add the  third map
+        function thirdMap() {
+            // The location of california
+            const california = { lat: 36.778259, lng: -119.417931 };
+            // The map, centered at california
+            const map = new google.maps.Map(document.getElementById("map3"), {
+                zoom: 8,
+                center: california,
+                mapTypeId: 'hybrid'
+            });
+            // The marker, positioned at california
+            const marker = new google.maps.Marker({
+                position: california,
+                map: map,
+            });
+        }
+        // Initialize and add the  four map
+        function fourMap() {
+            // The location of newYork
+            const newYork = { lat: 43.000000, lng: -75.000000 };
+            // The map, centered at newYork
+            const map = new google.maps.Map(document.getElementById("map4"), {
+                zoom: 8,
+                center: newYork,
+                mapTypeId: 'hybrid'
+            });
+            // The marker, positioned at california
+            const marker = new google.maps.Marker({
+                position: newYork,
+                map: map,
+            });
+        }
+
+    </script>
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+</head>
+<body>
+    <h1 style="text-align:center">Geographical of some states of America</h1>
+    <div class="row">
+        <div class="column" style="background-color:aqua">
+            <h2>las vegas</h2>
+            <div id="map"></div>
+        </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2NuAX6Hkp3gmFLi-U_1R_2Bis0_oRPjo&callback=initMap&v=weekly"
+                async></script>
+        <div class="column" style="background-color:brown">
+            <h2>Los angeles</h2>
+            <div id="map2"></div>
+        </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2NuAX6Hkp3gmFLi-U_1R_2Bis0_oRPjo&callback=secondMap&v=weekly"
+                async></script>
+        <div class="column" style="background-color:violet">
+            <h2>california</h2>
+            <div id="map3"></div>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2NuAX6Hkp3gmFLi-U_1R_2Bis0_oRPjo&callback=thirdMap&v=weekly"
+                    async></script>
+        </div>
+        <div class="column" style="background-color:navy">
+            <h2>New York</h2>
+            <div id="map4"></div>
+        </div>
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2NuAX6Hkp3gmFLi-U_1R_2Bis0_oRPjo&callback=fourMap&v=weekly"
+                async></script>
+    </div>
+    <a href="weather.html">look here for weather of USA</a>
+  <p>in this link the map used three layers for traffic,transit,bycicle and three diffrent API where users can post the where is the most congest roads </p>
+    <a href="maps.html">here it is the traffic in los angeles</a>
+</body>
+</html>
